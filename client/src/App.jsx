@@ -14,17 +14,19 @@ const App = () => {
     <>
       <BrowserRouter>
         <Header />
-        <Switch>
-          <Route exact path="/" component={HomeScreen} />
-          <Route path="/login" component={LoginScreen} />
-          <Route path="/register" component={RegisterScreen} />
-          <Route path="/messages" component={MessagesScreen} />
-          <Route path="/profile/:username" component={ProfileScreen} />
-          <Route path="/account" component={MyAccountScreen} />
-          <Route path="*" component={NotFoundScreen} />
-        </Switch>
+        <div id="app">
+          <Switch>
+            <Route exact path="/" component={HomeScreen} />
+            <Route path="/login" component={LoginScreen} />
+            <Route path="/register" component={RegisterScreen} />
+            <Route path="/messages" component={MessagesScreen} />
+            <Route path="/profile/:username" component={ProfileScreen} />
+            <Route path="/account" component={MyAccountScreen} />
+            <Route path="*" component={NotFoundScreen} />
+          </Switch>
+        </div>
 
-        <Footer />
+        <Footer fixed="bottom" />
       </BrowserRouter>
     </>
   );

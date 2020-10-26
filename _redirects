@@ -1,0 +1,7 @@
+
+/api/* https://feedj.herokuapp.com/api/:splat  200
+/login    /index.html 200
+/register /index.html 200
+/messages /index.html 200
+/profile/* /index.html 200
+/account /index.html 200

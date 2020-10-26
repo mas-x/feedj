@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Card,
-  Container,
-  Form,
-  Row,
-  Col,
-  Button,
-} from "react-bootstrap";
+import { Card, Container, Form, Row, Col, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ErrorAlert from "../components/ErrorAlert";
 
@@ -14,6 +7,7 @@ import SmallLoader from "../components/SmallLoader";
 import SuccessAlert from "../components/SuccessAlert";
 import { login } from "./../store/actions/authActions";
 const LoginScreen = ({ history, location }) => {
+  //todo validations on front end
   const { userLoginError, userInfo, isFetching } = useSelector(
     (state) => state.auth
   );

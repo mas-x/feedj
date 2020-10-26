@@ -3,17 +3,18 @@ import Alert from "react-bootstrap/Alert";
 const ErrorAlert = ({ errors }) => {
   return (
     <>
-      {errors &&
-        errors.length &&
-        errors.map &&
-        errors.map((err, index) => {
-          return (
-            <Alert key={index} variant="danger">
-              <small>{err.msg}</small>
-            </Alert>
-          );
-        })}
-
+      {errors && errors.length && errors.map && (
+        <Alert variant="danger">
+          {errors.map((err, index) => {
+            return (
+              <>
+                <small key={index}>{err.msg}</small>
+                <br />
+              </>
+            );
+          })}
+        </Alert>
+      )}
       {errors && errors.errorMessage && (
         <Alert variant="danger">
           <small>{errors.errorMessage}</small>

@@ -70,7 +70,7 @@ const ProfileScreen = ({ match }) => {
                   )}
                   <Card>
                     <Card.Header>
-                      Send an anonymouse message to @{userProfile.username}
+                      Send an anonymous message to @{userProfile.username}
                     </Card.Header>
                     <Card.Body>
                       {userInfo &&

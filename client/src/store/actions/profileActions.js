@@ -27,7 +27,7 @@ export const getProfile = (username) => async (dispatch) => {
         "Content-Type": "application/json",
       },
     };
-    const { data } = await Axios.get(`/api/users/${username}`, config);
+    const { data } = await Axios.get(`https://feedj.herokuapp.com/api/users/${username}`, config);
     dispatch({
       type: USER_PROFILE_SUCCESS,
       payload: data,
@@ -59,7 +59,7 @@ export const updateProfile = (username, email) => async (
       },
     };
     const { data } = await Axios.put(
-      "/api/users/update",
+      "https://feedj.herokuapp.com/api/users/update",
       {
         username,
         email,
@@ -107,7 +107,7 @@ export const updatePassword = (newPassword, currentPassword) => async (
       },
     };
     const { data } = await Axios.put(
-      "/api/users/password",
+      "https://feedj.herokuapp.com/api/users/password",
       {
         newPassword,
         currentPassword,
@@ -140,7 +140,7 @@ export const deleteAccount = () => async (dispatch, getState) => {
         Authorization: userInfo.token,
       },
     };
-    const { data } = await Axios.delete("api/users/", config);
+    const { data } = await Axios.delete("https://feedj.herokuapp.com/api/users/", config);
     localStorage.clear();
     dispatch({
       type: DELETE_ACCOUNT_SUCCESS,
@@ -169,7 +169,7 @@ export const updateProfilePicture = (file) => async (dispatch, getState) => {
     };
     const formData = new FormData();
     formData.append("image", file);
-    const { data } = await Axios.post("/api/users/upload", formData, config);
+    const { data } = await Axios.post("https://feedj.herokuapp.com/api/users/upload", formData, config);
     dispatch({
       type: UPDATE_PROFILE_PICTURE_SUCCESS,
       payload: data,

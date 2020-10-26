@@ -20,7 +20,7 @@ export const login = (username, password) => async (dispatch) => {
       },
     };
     const { data } = await Axios.post(
-      "api/auth",
+      "https://feedj.herokuapp.com/api/auth",
       {
         username,
         password,
@@ -54,7 +54,7 @@ export const register = (username, email, password, confirmPassword) => async (
       },
     };
     const { data } = await Axios.post(
-      "/api/users",
+      "https://feedj.herokuapp.com//api/users",
       {
         username,
         email,

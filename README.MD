@@ -7,5 +7,6 @@ https://feedj.netlify.app
 - ExpressJS
 - ReactJS
 - NodeJS
------------------------------------------
-Thank you!
+---
+
+Made with ♥ by Masroor Aijaz

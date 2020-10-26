@@ -27,7 +27,7 @@ export const listMessages = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await Axios.get("https://feedj.herokuapp.com/api/messages", config);
+    const { data } = await Axios.get("/api/messages", config);
     dispatch({
       type: MESSAGE_LIST_SUCCESS,
       payload: data,
@@ -56,7 +56,7 @@ export const deleteMessage = (id) => async (dispatch, getState) => {
         Authorization: userInfo.token,
       },
     };
-    const { data } = await Axios.delete(`https://feedj.herokuapp.com/api/messages/${id}`, config);
+    const { data } = await Axios.delete(`/api/messages/${id}`, config);
     dispatch({
       type: MESSAGE_DELETE_SUCCESS,
       payload: data,
@@ -80,7 +80,7 @@ export const postMessage = (username, message) => async (dispatch) => {
       },
     };
     const { data } = await Axios.post(
-      `https://feedj.herokuapp.com/api/messages/${username}`,
+      `/api/messages/${username}`,
       {
         message,
       },

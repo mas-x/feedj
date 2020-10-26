@@ -5,6 +5,7 @@ const ErrorAlert = ({ errors }) => {
     <>
       {errors &&
         errors.length &&
+        errors.map &&
         errors.map((err, index) => {
           return (
             <Alert key={index} variant="danger">

@@ -10,10 +10,17 @@ const RegisterScreen = ({ history }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const { userRegister, userRegisterError, isFetching } = useSelector(
+  const { userRegister, userRegisterError, userInfo, isFetching } = useSelector(
     (state) => state.auth
   );
+
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (userInfo) {
+      history.push("/");
+    }
+  }, [userInfo, history]);
 
   const onEmailChange = (e) => {
     setEmail(e.target.value);
